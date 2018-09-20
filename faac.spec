@@ -1,13 +1,13 @@
 Name:           faac
 Version:        1.29.9.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Encoder and encoding library for MPEG2/4 AAC
 License:        LGPLv2+
 URL:            http://faac.sourceforge.net/
 
 Source0:        http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
-#Patch0:         %{name}-libmp4v2.patch
 
+BuildRequires:  gcc
 BuildRequires:  libtool
 BuildRequires:  libmp4v2-devel
 
@@ -58,6 +58,9 @@ find %{buildroot} -name "*.la" -delete
 %{_includedir}/*.h
 
 %changelog
+* Thu Sep 20 2018 Simone Caronni <negativo17@gmail.com> - 1.29.9.2-2
+- Add GCC build requirement.
+
 * Tue Apr 24 2018 Simone Caronni <negativo17@gmail.com> - 1.29.9.2-1
 - Update to 1.29.9.2.
 - Update SPEC file.
